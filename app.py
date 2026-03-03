@@ -25,7 +25,7 @@ def scan_image_with_fallback(prompt, image):
         try:
             # Try to configure and run the model with the current key
             genai.configure(api_key=key)
-            vision_model = genai.GenerativeModel('gemini-flash-lite-latest')
+            vision_model = genai.GenerativeModel('gemma-3-27b-it')
             response = vision_model.generate_content([prompt, image])
             return response.text.strip(), None # Success!
             
